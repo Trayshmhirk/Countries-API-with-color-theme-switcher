@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+
+style {
+    color: hsl(209, 23%, 22%); /*Dark Blue (Dark Mode Elements)*/
+    color: hsl(207, 26%, 17%); /*Very Dark Blue (Dark Mode Background)*/
+    color: hsl(200, 15%, 8%); /*Very Dark Blue (Light Mode Text)*/
+    color: hsl(0, 0%, 52%); /*Dark Gray (Light Mode Input)*/
+    color: hsl(0, 0%, 98%); /*Very Light Gray (Light Mode Background)*/
+    color: hsl(0, 0%, 100%); /*White (Dark Mode Text & Light Mode Elements)*/
+}
+
+:root {
+    --dark-mode-bg-color: hsl(207, 26%, 17%);
+    --dark-mode-text-color: hsl(0, 0%, 100%);
+    --dark-mode-element-bg: hsl(209, 23%, 22%);
+    --light-mode-bg-color: hsl(0, 0%, 98%);
+    --light-mode-text-color: hsl(200, 15%, 8%);
+    --light-mode-element-bg: hsl(0, 0%, 100%);
+    --light-mode-input-color: hsl(0, 0%, 100%);
+    --font-family: 'Nunito Sans', sans-serif;
+}
+
+/* custom styles */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 14px;
+    overflow-x: hidden;
+    padding-bottom: 70px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0em auto;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* light mode styles */
+.light-mode {
+    background-color: var(--light-mode-bg-color);
+    color: var(--light-mode-text-color);
+}
+
+.light-mode-elements {
+    background-color: var(--light-mode-element-bg);
+}
+
+.light-mode-text {
+    color: var(--light-mode-text-color);
+}
+
+
+/* dark mode styles */
+.dark-mode {
+    background-color: var(--dark-mode-bg-color);
+    color: var(--dark-mode-text-color);
+}
+
+.dark-mode-elements {
+    background-color: var(--dark-mode-element-bg);
+}
+
+.dark-mode-text {
+    color: var(--dark-mode-text-color);
+}
+
+
+/* main styles */
+header {
+    margin-bottom: 30px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.226);
+}
+
+.head-flex > .container, .search-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head-flex > .container {
+    /* width: 100%; */
+    height: 60px;
+}
+
+.head-logo .logo {
+    font-size: 1.3em;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    font-family: var(--font-family);
+    font-size: 1em;
+}
+
+button i {
+    margin-right: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* search and filter styles */
+
+section.search-flex {
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    padding: 8px 20px;
+    align-items: center;
+    border-radius: 3px;
+    width: 350px;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.151);
+
+}
+
+input[type="search"] {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 3px 10px;
+    outline: none;
+}
+
+input[type="search"]::placeholder {
+    color: var(--dark-mode-text-color);
+    opacity: 0.8;
+    font-size: .8em;
+}
+
+form button {
+    font-size: .7em;
+}
+
+.select-container {
+    position: relative;
+    font-weight: 600;
+}
+
+.select-box {
+    position: relative;
+    height: 43px;
+    width: 180px;
+    padding: 0px 20px;
+    border-radius: 3px;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.151);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-box:hover {
+    cursor: pointer;
+}
+
+.icon-container {
+    height: 15px;
+}
+
+.options {
+    position: absolute;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px 0;
+    border-radius: 3px;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.151);
+    z-index: 99;
+    display: none;
+    
+}
+
+.options li {
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+/* back button */
+
+.back-bttn {
+    height: 40px;
+    width: 110px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.151);
+    margin-top: 20px;
+}
+
+
+/* countries card body */
+
+.countries-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-body {
+    width: 260px;
+    height: 365px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 15px 0 35px 0;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.151);
+    cursor: pointer;
+    position: relative;
+}
+
+.card-body > img {
+    width: 100%;
+    height: 170px;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.089);
+
+}
+
+.card-body .card-info {
+    margin: 25px;
+}
+
+.card-body .card-info h2 {
+    margin-bottom: 15px;
+    font-size: 1.45em;
+}
+
+.span-bold {
+    font-weight: 600;
+}
+
+.count-desc p {
+    margin-bottom: 5px;
+}
+
+/* country details */
+
+.detail-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+
+}
+
+.detail-flex .image img{
+    width: 500px;
+    height: 350px;
+}
+
+.detail-flex .info{
+    width: 600px;
+    font-size: 1.3em;
+}
+
+.country-name h1{
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.more-info-flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.more-info-flex p {
+    margin-bottom: 5px;
+}
+
+.border-countries {
+    display: flex;
+    align-items: center;
+}
+
+.border-countries p {
+    margin-right: 20px;
+}
+
+#border-id {
+    padding: 3px 30px;
+    margin-right: 10px;
+    border-radius: 3px;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.151);
+}

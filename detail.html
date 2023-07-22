@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/d88dc75d7a.js" crossorigin="anonymous"></script>
+    <title>Countries API color theme | Frontend Mentor</title>
+</head>
+<body id="body" class="light-mode dark-mode">
+    <!-- header -->
+    <header class="head-flex dark-mode-elements light-mode-elements ">
+        <div class="container">
+            <div class="head-logo">
+                <p class="logo">Where in the world?</p>
+            </div>
+
+            <div id="color-switcher-div" class="">
+                <button disabled id="color-switch-dark" class="light-mode-text">
+                    <i class="fa-solid fa-moon"></i>
+                    Dark Mode
+                </button>
+
+                <button disabled id="color-switch-light" class="dark-mode-text">
+                    <i class="fa-regular fa-lightbulb"></i>
+                    Light Mode
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- search and filter -->
+    <section class="search-flex container">
+        <button id="back-bttn" class="back-bttn dark-mode-elements light-mode-elements dark-mode-text light-mode-text">
+            <i class="fa-solid fa-arrow-left-long"></i> Back
+        </button>
+    </section>
+
+    <!-- country details section -->
+    <section id="country-detail" class="light-mode dark-mode">
+        <div class="container">
+            <!-- card info constructed in Javacript -->
+            <div class="detail-flex">
+                
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Javascript -->
+    <script src="detailsJS/countriesAPI.js"></script>
+    <script src="detailsJS/detailUI.js"></script>
+    <script src="detailsJS/app.js"></script>
+
+    <!-- This script tag is to call/grab the country name and the theme passed from the home page into this html in order to be able to use the two parameters in the functions of this page -->
+    <script>
+        /*
+            This functions to grab the country name that has been passed into the url for the page.
+            Without this, we would not be able to run the validation of if the card that is being clicked correllates with the card in the api.
+            This helps greatly solve many problems in the code
+        */
+        document.addEventListener('DOMContentLoaded', () => {
+            // search for the country name that has been passed into the url from the previous page, on clicking the cards
+            const urlParamsCountry = new URLSearchParams(window.location.search);
+            const countryName = urlParamsCountry.get('country');
+
+            // grab the theme passed into the url from the home page
+            const urlParamsTheme = new URLSearchParams(window.location.search);
+            const currentTheme = urlParamsTheme.get('theme');
+
+            // set the theme of the detail page based on the theme received from the home page 
+            if (currentTheme === 'dark-mode') { // if currentTheme is dark switch to dark mode, else switch to light mode
+                switchDarkMode();
+            } else {
+                switchLightMode();
+            }
+
+            // prints the country name as the dom title
+            document.title = `${countryName} | Frontend Mentor`;
+        
+            // Load the details of the selected country
+            detailUI.countriesDetailInfo(countryName);
+        });
+    </script>
+</body>
+</html>

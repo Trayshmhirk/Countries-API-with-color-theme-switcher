@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/d88dc75d7a.js" crossorigin="anonymous"></script>
+    <title>Countries API color theme | Frontend Mentor</title>
+</head>
+<body id="body" class="light-mode dark-mode">
+    <!-- header -->
+    <header class="head-flex dark-mode-elements light-mode-elements ">
+        <div class="container">
+            <div class="head-logo">
+                <p class="logo">Where in the world?</p>
+            </div>
+
+            <div id="color-switcher-div" class="">
+                <button id="color-switch-dark" class="light-mode-text">
+                    <i class="fa-solid fa-moon"></i>
+                    Dark Mode
+                </button>
+
+                <button id="color-switch-light" class="dark-mode-text">
+                    <i class="fa-regular fa-lightbulb"></i>
+                    Light Mode
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- search and filter -->
+    <section class="search-flex container">
+        <form action="" id="search-country" class="dark-mode-elements light-mode-elements">       
+            <button type="submit"><i class="fa-solid fa-magnifying-glass fa-lg dark-mode-text light-mode-text"></i></button>
+            <input type="search" id="search" class="dark-mode-text light-mode-text" placeholder="Search for a country..">
+        </form>
+
+        <div class="select-container">
+            <div id="drop-down" class="select-box dark-mode-elements light-mode-elements dark-mode-text light-mode-text" name="" id="filter-region" placeholder="">
+                <p id="select-text">Filter by region</p>
+                <div class="icon-container">
+                    <i class="fa-solid fa-angle-down dark-mode-text light-mode-text"></i>
+                </div>
+            </div>
+            
+            <div id="options" class="options dark-mode-elements light-mode-elements">
+                <ul>
+                    <li class="country-option" id="Africa">Africa</li>
+                    <li class="country-option" id="Americas">America</li>
+                    <li class="country-option" id="Asia">Asia</li>
+                    <li class="country-option" id="Europe">Europe</li>
+                    <li class="country-option" id="Oceania">Oceania</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- country api cards -->
+    <section id="countries" class="light-mode dark-mode">
+        <div class="container countries-flex">
+            <!-- card info constructed in Javacript -->
+        </div>
+    </section>
+
+
+
+
+    <!-- Javascript -->
+    <script src="js/countriesAPI.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
